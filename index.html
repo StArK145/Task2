@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern To-Do List</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <button class="theme-toggle" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+      <h1>My Tasks</h1>
+      <div class="stats">
+        <div class="stat">
+          <span>📝</span>
+          <span id="total-tasks">0 total</span>
+        </div>
+        <div class="stat">
+          <span>✅</span>
+          <span id="completed-count">0 completed</span>
+        </div>
+        <div class="stat">
+          <span>⏰</span>
+          <span id="active-count">0 active</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-section">
+      <div class="input-wrapper">
+        <input type="text" id="task-input" placeholder="What needs to be done?" maxlength="200" />
+        <select class="priority-selector" id="priority-selector">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <button id="add-task-btn">Add</button>
+      </div>
+      
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+        <button class="filter-btn" data-filter="high">High Priority</button>
+      </div>
+    </div>
+
+    <div class="task-section">
+      <div class="section-header">
+        <h2 class="section-title">Tasks</h2>
+        <button class="clear-completed" id="clear-completed" style="display: none;">Clear Completed</button>
+      </div>
+      
+      <ul class="task-list" id="task-list">
+        <div class="empty-state" id="empty-state">
+          <div class="empty-state-icon">📝</div>
+          <p>No tasks yet. Add one above!</p>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
